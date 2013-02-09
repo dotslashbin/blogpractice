@@ -2,14 +2,14 @@
 
 one:
   title: MyString
-  location: MyString
-  excerpt: MyString
   body: MyText
-  published_at: 2013-02-03 23:15:39
+  published_at: 2013-02-07 22:33:44
+  author: MyString
+  keywords: MyString
 
 two:
   title: MyString
-  location: MyString
-  excerpt: MyString
   body: MyText
-  published_at: 2013-02-03 23:15:39
+  published_at: 2013-02-07 22:33:44
+  author: MyString
+  keywords: MyString
