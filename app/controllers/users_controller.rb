@@ -1,25 +1,34 @@
 class UsersController < ApplicationController
 
   def index
+
+    @users = User.all
+
     respond_to do |format|
-      format.html  # index.html.erb
-      format.json { render json: @articles }
+      format.html
+      format.json { render json: @users }
     end
   end
 
   def new
+
     @user = User.new
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @users }
+    end
   end
 
-  #def create
-  #  @user = User.new( params[ :user ] );
-  #
-  #  if @user.save
-  #    redirect_to articles_path, :notice => "User successfully added"
-  #  else
-  #    render :action => 'new'
-  #  end
-  #end
+  def create
+    @user = User.new( params[ :user ] );
+
+    if @user.save
+      redirect_to articles_path, :notice => "User successfully added"
+    else
+      render :action => 'new'
+    end
+  end
 
   #def update
   #  @user = User.find( params[:id] )

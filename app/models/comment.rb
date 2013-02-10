@@ -1,3 +1,5 @@
 class Comment < ActiveRecord::Base
-  attr_accessible :article_id, :body, :email, :name
+  attr_accessible :body, :email, :name
+
+  belongs_to :article
 end

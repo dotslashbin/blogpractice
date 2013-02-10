@@ -1,6 +1,8 @@
 class Article < ActiveRecord::Base
   attr_accessible :author, :body, :keywords, :published_at, :title
 
+  has_many :comments
+
   def before_create
     puts "this is what happens before save"
   end
