@@ -1,0 +1,23 @@
+<div id="comment-form-container">
+  <div class="field">
+    <%= comment.label :name %>
+    <br />
+    <%= comment.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= comment.label :email %>
+    <br />
+    <%= comment.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= comment.label :body %>
+    <br />
+    <%= comment.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>

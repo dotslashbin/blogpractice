@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_filter :load_article
 
-  def crate
+  def create
     @comment = @article.comments.new( params[ :comment ] )
 
     if @comment.save
@@ -10,5 +10,16 @@ class CommentsController < ApplicationController
       redirect_to @article, :notice => "Wa man ma add ang comment"
     end
   end
+
+  def destroy
+    @comment = article.comments.find( params[ :id ] )
+    @comment.destroy
+    redirect_to @article, :notice => 'Comment Deleted'
+  end
+
+  private
+    def load_article
+      @article = Article.find ( params[ :article_id ] )
+    end
 
 end

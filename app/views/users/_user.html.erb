@@ -1,0 +1,24 @@
+<div class="profile-contianer" style="margin-bottom: 10px;">
+    <span>Email:</span><%=  user.email %>
+    <br />
+    <span>Password:</span><%=  user.password %>
+    <% if user.profile %>
+          <br />
+
+          <% if user.profile.name %>
+            <span>Name:</span><%= user.profile.name %>
+            <br />
+          <% end %>
+
+
+          <% if user.profile.twitter %>
+            <span>Name:</span><%= user.profile.twitter %>
+            <br />
+          <% end %>
+
+          <% if user.profile.bio %>
+            <span>Name:</span><%= user.profile.bio %>
+            <br />
+          <% end %>
+    <% end %>
+</div>

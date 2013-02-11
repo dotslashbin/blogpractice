@@ -1,0 +1,10 @@
+<div id="comment-container" style="border: 1px solid #000000;">
+  <span>From:</span><%= comment.name %>
+  <br />
+  <span>Email:</span><%= comment.email %>
+  <p>
+    <%= comment.body %>
+  </p>
+</div>
+
+<%= render :file => 'comments/new' %>
