@@ -1,23 +1,27 @@
-<div id="comment-form-container">
-  <div class="field">
-    <%= comment.label :name %>
-    <br />
-    <%= comment.text_field :name %>
-  </div>
+<p>
 
-  <div class="field">
-    <%= comment.label :email %>
-    <br />
-    <%= comment.text_field :email %>
-  </div>
+</p>
 
-  <div class="field">
-    <%= comment.label :body %>
-    <br />
-    <%= comment.text_area :body %>
-  </div>
+<%= form_for( [@article, @article.comments.build ] ) do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+      <br />
+      <%= f.text_field :name %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-</div>
+    <div class="field">
+      <%= f.label :email %>
+      <br />
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :body %>
+      <br />
+      <%= f.text_area :body %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

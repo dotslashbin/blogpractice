@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>ID:</b>
+  <%= @article.id %>
+</p>
+
+<p>
   <b>Title:</b>
   <%= @article.title %>
 </p>
@@ -37,7 +42,10 @@
   <%= @article.comments.count %> comments available
 
   <%= render @article.comments %>
+
 </div>
 <% else %>
 <p>There are no comments as of the moment</p>
 <%e end %>
+
+<%= render 'comments/new' %>
