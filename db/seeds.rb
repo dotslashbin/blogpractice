@@ -7,7 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 user = User.create :email => 'joshuarpf@gmail.com', :password => 'pass123'
+Category.create [
+                  { :name => 'Programming' },
+                  { :name => 'Starcraft 2' },
+                  { :name => 'UFC' }
+                ]
 
-profile = Profile.create :name => "Joshua Fuentes", :twitter => "JoshuaRaphaelPF"
-
-user.profile = profile
