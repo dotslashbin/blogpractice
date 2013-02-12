@@ -1,0 +1,11 @@
+class CreateArticlesCategories < ActiveRecord::Migration
+  def up
+    create_table :articles_categories, :id => false do |table|
+      table.references :article
+      table.references :category
+    end
+  end
+
+  def down
+  end
+end
