@@ -4,8 +4,14 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
 
+    if session[ :user_id ]
+      @hasSession = true
+    else
+      @hasSession = false
+    end
+
     respond_to do |format|
-      format.html  # index.html.erb
+      format.html # index.html.erb
       format.json { render json: @articles }
     end
   end
@@ -13,7 +19,10 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+
     @article = Article.find( params[:id] )
+
+    logger.info "session is #{session }"
 
     respond_to do |format|
       format.html # show.html.erb

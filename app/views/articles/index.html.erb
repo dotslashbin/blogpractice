@@ -1,4 +1,6 @@
-<h1>Listing articles</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing articles:</h1>
 
 <table>
   <tr>
@@ -29,3 +31,7 @@
 <br />
 
 <%= link_to 'New Article', new_article_path %>
+
+<% if @hasSession %>
+    <p>there is a session</p>
+<% end %>

@@ -11,4 +11,8 @@ class CreateProfiles < ActiveRecord::Migration
       t.timestamps
     end
   end
+
+  def down
+    drop_table :profiles
+  end
 end

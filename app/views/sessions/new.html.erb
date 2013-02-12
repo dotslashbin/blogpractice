@@ -1,0 +1,24 @@
+<% if flash.now[ :alert ] %>
+    <div id="alert-container">
+      <p><%= flash.now[ :alert ] %></p>
+    </div>
+<% end %>
+
+
+<%= form_tag session_path do %>
+    <div class="field">
+        <%= label_tag :email %>
+        <br />
+        <%= text_field_tag :email %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag 'login' %>
+    </div>
+
+<% end %>
