@@ -7,5 +7,6 @@ class CreateArticlesCategories < ActiveRecord::Migration
   end
 
   def down
+    drop_table :artilces_categories
   end
 end
