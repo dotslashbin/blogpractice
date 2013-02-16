@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :authenticate, :except => [ :edit, :update ]
 
   def index
 
@@ -30,14 +31,16 @@ class UsersController < ApplicationController
     end
   end
 
-  #def update
-  #  @user = User.find( params[:id] )
-  #end
-  #
-  #if @user.update_attributes( params[ :user ] )
-  #  redirect_to articles_path, :notice => "User updated"
-  #else
-  #    render :action => 'edit'
-  #end
+  def edit
+    @user = current_user
+  end
+
+  def update
+    if @user.update_attributes( params[ :user ] )
+      redirect_to articles_path, :notice => "Updated user information successfully"
+    else
+      render :action => "edit"
+    end
+  end
 
 end
